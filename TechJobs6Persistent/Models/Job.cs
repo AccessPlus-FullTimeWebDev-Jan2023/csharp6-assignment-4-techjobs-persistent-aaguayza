@@ -22,6 +22,20 @@ namespace TechJobs6Persistent.Models
         public Job()
         {
         }
+        public string PrintSkills()
+        {
+            string skillText = "";
+            
+            foreach(var skill in Skills)
+            {
+                
+                    skillText = skillText + skill.SkillName + ", ";
+                
+            }
+            skillText = skillText.TrimEnd(' ');
+            skillText = skillText.TrimEnd(',');
+            return skillText;
+        }
     }
 }
 

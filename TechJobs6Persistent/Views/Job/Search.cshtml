@@ -1,0 +1,51 @@
+﻿@using TechJobs6Persistent.Models
+@model List<Job>
+
+            
+<h1>Search Jobs by Employer</h1>
+
+<form action="Search" method="Post">
+        <p>
+    <label for="searchTerm">Keyword:</label>
+    <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+    <input type="submit" value="Search" />
+</form>
+<br>
+
+<div>
+@if (ViewBag.jobs != null)
+{
+    @foreach (var job in ViewBag.jobs)
+    {
+        <table class="job-listing">
+            <tr>
+                <th>Job Title</th>
+                <td>@job.Name</td>
+            </tr>
+            <tr>
+                <th>Employer</th>
+                <td>@job.Employer.Name</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>@job.Employer.Location</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                  @*@ @foreach(var skill in job.Skills)
+                    {
+                        
+                        <td>@($" {skill.SkillName} ")</td>
+                        
+                        
+                    }*@
+                   <td>@job.PrintSkills()</td>
+                    
+            </tr>
+        </table>
+        <br>
+    }
+
+}
+</div>
