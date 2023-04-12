@@ -5,11 +5,27 @@
 <h1>Search Jobs by Employer</h1>
 
 <form action="Search" method="Post">
+    <h3>Search Type</h3>
+    <span>
+        <label>
+        <input type="radio"  name="searchType" value = "Employers" checked> 
+        Employer
+        </label>
+        <label>
+        <input type="radio"  name="searchType" value = "Location"> 
+        Location
+        </label>
+        <label>
+        <input type="radio"  name="searchType" value = "Skills"> 
+        Skill
+        </label>
+    </span>
+    
         <p>
     <label for="searchTerm">Keyword:</label>
     <input type="text" name="searchTerm" id="searchTerm" />
         </p>
-    <input type="submit" value="Search" />
+    <input type="submit" value="Search" class="btn btn-success"/>
 </form>
 <br>
 
