@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -31,6 +32,7 @@ Consider using the .Find() method to search the database.
 
 namespace TechJobs6Persistent.Controllers
 {
+    [Authorize]
     public class EmployerController : Controller
     {
         private JobDbContext context;
@@ -76,7 +78,6 @@ namespace TechJobs6Persistent.Controllers
                 Employer selectedEmployer = context.Employers.Find(id);
             return View(selectedEmployer);
         }
-
     }
 }
 

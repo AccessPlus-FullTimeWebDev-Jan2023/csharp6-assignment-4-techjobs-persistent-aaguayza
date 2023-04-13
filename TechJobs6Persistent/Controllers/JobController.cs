@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechJobs6Persistent.Data;
@@ -12,6 +13,7 @@ using TechJobs6Persistent.ViewModels;
 
 namespace TechJobs6Persistent.Controllers
 {
+    [Authorize]
     public class JobController : Controller
     {
         private JobDbContext context;
